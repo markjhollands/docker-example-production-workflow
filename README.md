@@ -21,3 +21,11 @@ To create a development Docker image you can build using the **Dockerfile.dev** 
 cd frontend/
 docker build -f Dockerfile.dev .
 ```
+
+## Running the Development Docker image
+
+To run the development Docker image, run the following as you would with any other Docker image:
+
+```bash
+docker run -p 3000:3000 <IMAGE_ID>
+```
