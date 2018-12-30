@@ -12,3 +12,12 @@ Command | Description
 **npm run start** | Starts up a development server. *For development use only*
 
 The commands must be run the order above.
+
+## Creating the Development Docker image
+
+To create a development Docker image you can build using the **Dockerfile.dev** file:
+
+```bash
+cd frontend/
+docker build -f Dockerfile.dev .
+```
