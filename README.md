@@ -27,5 +27,10 @@ docker build -f Dockerfile.dev .
 To run the development Docker image, run the following as you would with any other Docker image:
 
 ```bash
-docker run -p 3000:3000 <IMAGE_ID>
+docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <IMAGE_ID>
 ```
+
+**Note:**
+> Make sure you include the first **-v** flag to *bookmark* the node_modules directory. If you don't do this the node_modules directory will not exist and the app will not start.
+> 
+> The second **-v** flag ensures that changes on your workstation will be reflected in the container. Make sure you start the container in the working directory on your workstation. Any changes to **package.json** will still require a rebuild of the Docker image.
