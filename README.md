@@ -1,5 +1,5 @@
-# udemy-docker-and-kubernetes-s6
-Udemy: Docker and Kubernetes: The Complete Guide - Section 6: Creating a Production-Grade Workflow
+# docker-example-production-workflow
+Learning: Example Docker project with a production-grade workflow. This project formed part of an online course on how to use Docker.
 
 ## Running the React.js frontend
 
