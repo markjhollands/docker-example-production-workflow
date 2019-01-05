@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t markjhollands/docker-example-production-workflow -f Dockerfile.dev .
+
+script:
+  - docker run -v /app/node_modules -v $(pwd):/app markjhollands/docker-example-production-workflow npm run test -- --coverage
