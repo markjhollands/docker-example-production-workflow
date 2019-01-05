@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run -v /app/node_modules -v $(pwd):/app markjhollands/docker-example-production-workflow npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-2"
+  app: "docker-example-production-workflow"
+  env: "DockerExampleProductionWorkflow-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-2-057706959022"
+  bucket_path: "docker-example-production-workflow"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
